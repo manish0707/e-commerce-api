@@ -16,9 +16,7 @@ const ProductCart = mongoose.model("ProductCart", productCartSchema)
 const OrderSchema = new mongoose.Schema({
   products: [ProductCartSchema],
   transection_id : {},
-  amount: {
-    type: Number
-  },
+  amount: Number,
   address : String,
   updated: Date,
   user: {
@@ -29,4 +27,4 @@ const OrderSchema = new mongoose.Schema({
 
 const Order = mongoose.model("Order", OrderSchema)
 
-module.exports = { Order, Product }
+module.exports = { Order, ProductCart }
