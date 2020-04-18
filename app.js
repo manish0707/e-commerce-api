@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
 
+// MY ROUTES
 const authRoutes = require('./routes/auth')
+const userRoutes = require('./routes/user')
 
 //INITILIZING THE APP
 const app = express();
@@ -34,6 +36,7 @@ app.use(cors())
 
 //ROUTES
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 
 
