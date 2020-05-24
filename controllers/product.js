@@ -71,3 +71,25 @@ exports.createProduct = (req, res) => {
 exports.getProduct = (req, res) => {
   return res.json(req.product)
 }
+
+// delte route
+exports.deleteProduct = (req, res) => {
+  const product = req.product;
+  product.remove((err, deletedProduct) => {
+    if(err) {
+      return res.state(400).json({
+        error: "Failed to delte product!"
+      })
+    }
+
+    res.json({
+      message: "Deleted sucessfully!",
+      deletedProduct
+    })
+  })
+}
+
+// update product
+exports.updateProduct = (req, res) => {
+  
+}
